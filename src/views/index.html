@@ -20,15 +20,18 @@ fabricator: true
 
 <h2>Color</h2>
 
-{{#each toolkit.colors}}
-	<div class="f-color-chips">
-	{{#each this}}
-		<div class="f-color-chip">
-			<div class="f-color-chip__name">{{@key}}</div>
-			<div class="f-color-chip__color">{{this}}</div>
-		</div>
-	{{/each}}
+<div class="f-color-chips">
+{{#each colors.color}}
+	<div class="f-color-chip">
+		<div class="f-color-chip__name">{{@key}}</div>
+		<div class="f-color-chip__color">{{this}}</div>
 	</div>
+{{/each}}
+</div>
+
+<h2> Fonts </h2>
+{{#each fonts.font}}
+	<pre class="language-markup"><code class="language-markup">{{@key}}: {{this}}</code></pre>
 {{/each}}
 
 <h2>Typography</h2>
