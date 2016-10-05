@@ -1,3 +1,5 @@
+require('require-dir')('./Dragoman');
+
 const assembler = require('fabricator-assemble');
 const browserSync = require('browser-sync');
 const csso = require('gulp-csso');
@@ -13,6 +15,8 @@ const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const webpack = require('webpack');
+var exec = require('child_process').exec;
+
 
 // configuration
 const config = {
@@ -59,6 +63,18 @@ const config = {
 // clean
 gulp.task('clean', del.bind(null, [config.dest]));
 
+// Dragoman
+gulp.task('clean-tokens', del.bind(null, [config.styles.toolkit.src + 'scss']));
+
+gulp.task('dragoman', ['clean-tokens'], function(cb){
+    return exec('gulp dragoman-scss', {
+        cwd: 'Dragoman'
+    }, (error, stdout, stderr) => {
+        console.log(`stdout: ${stdout}`);
+        console.log(`stderr: ${stderr}`);
+        cb(error)
+    });
+});
 
 // styles
 gulp.task('styles:fabricator', () => {
@@ -73,7 +89,7 @@ gulp.task('styles:fabricator', () => {
   .pipe(gulpif(config.dev, reload({ stream: true })));
 });
 
-gulp.task('styles:toolkit', () => {
+gulp.task('styles:toolkit', ['dragoman'],() => {
   gulp.src(config.styles.toolkit.src)
   .pipe(gulpif(config.dev, sourcemaps.init()))
   .pipe(sass({
@@ -85,6 +101,7 @@ gulp.task('styles:toolkit', () => {
   .pipe(gulp.dest(config.styles.toolkit.dest))
   .pipe(gulpif(config.dev, reload({ stream: true })));
 });
+
 
 gulp.task('styles', ['styles:fabricator', 'styles:toolkit']);
 
