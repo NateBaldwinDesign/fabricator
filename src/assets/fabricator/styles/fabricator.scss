@@ -17,3 +17,20 @@ $settings: (
 @import 'partials/item';
 @import 'partials/layout';
 @import 'partials/menu';
+
+.fonts {
+	display: inline-block;
+	line-height: 1.6;
+	font-size: 1.25em;
+}
+
+.font-heading {
+	font-size: 10em;
+	line-height: 1;
+}
+
+.font-uppercase,
+.font-lowercase,
+.font-numbers {
+	display: block;
+}

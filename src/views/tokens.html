@@ -23,6 +23,14 @@ fabricator: true
 <h2> Fonts </h2>
 {{#each fonts.font}}
 	<pre class="language-markup"><code class="language-markup">font-{{@key}}: {{this}}</code></pre>
+	<div class="fonts font-heading" style="font-family: {{this}}">
+		Aa
+	</div>
+	<div class="fonts" style="font-family: {{this}}">
+		<span class="font-uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+		<span class="font-lowercase">abcdefghijklmnopqrstuvwxyz</span>
+		<span class="font-numbers">01234567890`-=[]\;',./</span class="font-numbers">~!@#$%^&*()_+{}|:"<>?<span>
+	</div>
 {{/each}}
 
 <h2> Spacing </h2>
@@ -39,3 +47,6 @@ fabricator: true
 {{#each typography.base}}
 	<pre class="language-markup"><code class="language-markup">base-{{@key}}: {{this}}</code></pre>
 {{/each}}
+
+<br/>
+<br/>
