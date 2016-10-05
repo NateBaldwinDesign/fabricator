@@ -1,21 +1,35 @@
-[![GitHub release](https://img.shields.io/github/release/fbrctr/fabricator.svg)]()
+<!-- [![GitHub release](https://img.shields.io/github/release/fbrctr/fabricator.svg)]()
 [![Build Status](https://travis-ci.org/fbrctr/fabricator.svg)](https://travis-ci.org/fbrctr/fabricator) [![devDependency Status](https://david-dm.org/fbrctr/fabricator/dev-status.svg)](https://david-dm.org/fbrctr/fabricator#info=devDependencies) [![Join the chat at https://gitter.im/fbrctr/fabricator](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fbrctr/fabricator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <p align="center">
   <img src="http://fbrctr.github.io/assets/toolkit/images/logo.svg" width="500">
 </p>
-
-# Fabricator
+ -->
+# Fabricator + Dragoman
 
 > _fabricate_ - to make by assembling parts or sections.
+> _dragoman_ - a professional interpreter.
 
 Fabricator is a tool for building website UI toolkits - _think ["Tiny Bootstraps, for Every Client"](http://daverupert.com/2013/04/responsive-deliverables/#tiny-bootstraps-for-every-client)_
 
 ## Quick Start
 
 ```shell
-$ curl -L https://github.com/fbrctr/fabricator/archive/master.tar.gz | tar zx --strip 1
+$ git clone (this repo)
 $ npm start
+```
+
+#### Hack the Data
+You need to point to Dragoman's tokens in order to make your Fabricator site pull the tokens into the documentation. In order to do that, find:
+
+```
+node_modules/fabricator-assemble/index.js
+```
+
+Then replace the `data` line with this:
+
+```js
+data: ['Dragoman/_tokens/**/*.{json,yml}']
 ```
 
 ## Documentation
