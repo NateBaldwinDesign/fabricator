@@ -1,0 +1,41 @@
+---
+title: Overview | Fabricator
+fabricator: true
+---
+
+<h1>Tokens</h1>
+
+<p>In order to facilitate cross-platform development, this tool utilizes 'design tokens'. The tokens are defined and translated into multiple languages using Dragoman.</p>
+
+<p>Using tokens as a variable within another token requires the <code>%</code> prefix. The percent sign is converted to the proper character during translation into the various languages.</p>
+
+<h2>Color</h2>
+
+<div class="f-color-chips">
+{{#each colors.color}}
+	<div class="f-color-chip">
+		<div class="f-color-chip__name">{{@key}}</div>
+		<div class="f-color-chip__color">{{this}}</div>
+	</div>
+{{/each}}
+</div>
+
+<h2> Fonts </h2>
+{{#each fonts.font}}
+	<pre class="language-markup"><code class="language-markup">font-{{@key}}: {{this}}</code></pre>
+{{/each}}
+
+<h2> Spacing </h2>
+{{#each spacing.spacing}}
+	<pre class="language-markup"><code class="language-markup">spacing-{{@key}}: {{this}}</code></pre>
+{{/each}}
+
+<h2> Icons </h2>
+{{#each icons.icon}}
+	<pre class="language-markup"><code class="language-markup">icon-{{@key}}: {{this}}</code></pre>
+{{/each}}
+
+<h2> Typography </h2>
+{{#each typography.base}}
+	<pre class="language-markup"><code class="language-markup">base-{{@key}}: {{this}}</code></pre>
+{{/each}}
