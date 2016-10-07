@@ -36,6 +36,8 @@ fabricator: true
 <h2> Spacing </h2>
 {{#each spacing.spacing}}
 	<pre class="language-markup"><code class="language-markup">spacing-{{@key}}: {{this}}</code></pre>
+	<div class="spacing" style="width: {{this}}; height: {{this}};">
+	</div>
 {{/each}}
 
 <h2> Icons </h2>
