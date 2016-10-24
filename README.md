@@ -8,9 +8,12 @@
 # Fabricator + Dragoman
 
 > _fabricate_ - to make by assembling parts or sections.
+
 > _dragoman_ - a professional interpreter.
 
 Fabricator is a tool for building website UI toolkits - _think ["Tiny Bootstraps, for Every Client"](http://daverupert.com/2013/04/responsive-deliverables/#tiny-bootstraps-for-every-client)_
+
+Dragoman is a plugin for creating applications with a token-based design systems. Using gulp with yaml "tokens", Dragoman generates multi-platform assets for core design attributes. This allows you build unified & consistent applications with a core set of *cross-platform variables*
 
 ## Quick Start
 

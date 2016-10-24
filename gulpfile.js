@@ -68,7 +68,7 @@ gulp.task('clean-tokens', del.bind(null, [config.styles.toolkit.src + 'scss']));
 
 gulp.task('dragoman', ['clean-tokens'], function(cb){
     return exec('gulp dragoman-scss', {
-        cwd: 'Dragoman'
+        cwd: 'dragoman'
     }, (error, stdout, stderr) => {
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);

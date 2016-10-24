@@ -1,3 +1,4 @@
 [submodule "Dragoman"]
 	path = Dragoman
 	url = https://github.com/NateBaldwinDesign/Dragoman.git
+	branch = master
