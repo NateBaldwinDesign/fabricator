@@ -10,6 +10,14 @@ $settings: (
 	menu-width: 14rem
 );
 
+// Import Toolkit
+@import '../../toolkit/styles/scss/_color';
+@import '../../toolkit/styles/scss/_spacing';
+@import '../../toolkit/styles/scss/_fonts';
+@import '../../toolkit/styles/scss/_icons';
+@import '../../toolkit/styles/scss/_typography';
+
+// Import Fabricator partials
 @import 'partials/variables';
 @import 'partials/code';
 @import 'partials/color-chips';
@@ -17,23 +25,17 @@ $settings: (
 @import 'partials/item';
 @import 'partials/layout';
 @import 'partials/menu';
+@import 'partials/token-display';
 
-// Token display:
-.fonts {
-	display: inline-block;
-	line-height: 1.6;
-	font-size: 1.25em;
+h1,
+h2,
+h3,
+h4 {text-transform: capitalize;}
+
+article {
+	margin-top: calc(#{$spacing-xlarge} * 4);
+	margin-bottom: calc(#{$spacing-xlarge} * 4);
+	padding-bottom: calc(#{$spacing-xlarge} * 4);
+	border-bottom: 1px solid rgba(0, 0, 0, .15%);
 }
 
-.font-heading {
-	font-size: 10em;
-	line-height: 1;
-}
-
-.font-uppercase,
-.font-lowercase,
-.font-numbers {
-	display: block;
-}
-
-.spacing {background-color: #ccc;}

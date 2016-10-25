@@ -9,46 +9,60 @@ fabricator: true
 
 <p>Using tokens as a variable within another token requires the <code>%</code> prefix. The percent sign is converted to the proper character during translation into the various languages.</p>
 
-<h2>Color</h2>
-
-<div class="f-color-chips">
-{{#each colors.color}}
-	<div class="f-color-chip">
-		<div class="f-color-chip__name">{{@key}}</div>
-		<div class="f-color-chip__color">{{this}}</div>
+<article>
+	<h2>{{colors.name}}</h2>
+	<p>{{colors.description}}</p>
+	<div class="f-color-chips">
+	{{#each colors.color}}
+		<div class="f-color-chip">
+			<div class="f-color-chip__name">{{@key}}</div>
+			<div class="f-color-chip__color">{{this}}</div>
+		</div>
+	{{/each}}
 	</div>
-{{/each}}
-</div>
+</article>
 
-<h2> Fonts </h2>
-{{#each fonts.font}}
-	<pre class="language-markup"><code class="language-markup">font-{{@key}}: {{this}}</code></pre>
-	<div class="fonts font-heading" style="font-family: {{this}}">
-		Aa
-	</div>
-	<div class="fonts" style="font-family: {{this}}">
-		<span class="font-uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
-		<span class="font-lowercase">abcdefghijklmnopqrstuvwxyz</span>
-		<span class="font-numbers">01234567890`-=[]\;',./</span class="font-numbers">~!@#$%^&*()_+{}|:"<>?<span>
-	</div>
-{{/each}}
+<article>
+	<h2> {{fonts.name}} </h2>
+	<p> {{fonts.description}}</p>
+	{{#each fonts.font}}
+		<pre class="language-markup"><code class="language-markup">font-{{@key}}: {{this}}</code></pre>
+		<div class="fonts font-heading" style="font-family: {{this}}">
+			Aa
+		</div>
+		<div class="fonts" style="font-family: {{this}}">
+			<span class="font-uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+			<span class="font-lowercase">abcdefghijklmnopqrstuvwxyz</span>
+			<span class="font-numbers">01234567890`-=[]\;',./</span class="font-numbers">~!@#$%^&*()_+{}|:"<>?</span>
+		</div>
+	{{/each}}
+</article>
 
-<h2> Spacing </h2>
-{{#each spacing.spacing}}
-	<pre class="language-markup"><code class="language-markup">spacing-{{@key}}: {{this}}</code></pre>
-	<div class="spacing" style="width: {{this}}; height: {{this}};">
-	</div>
-{{/each}}
+<article>
+	<h2> {{spacing.name}} </h2>
+	<p> {{spacing.description}} </p>
+	{{#each spacing.spacing}}
+		<pre class="language-markup"><code class="language-markup">spacing-{{@key}}: {{this}}</code></pre>
+		<div class="spacing" style="width: {{this}}; height: {{this}};">
+		</div>
+	{{/each}}
+</article>
 
-<h2> Icons </h2>
-{{#each icons.icon}}
-	<pre class="language-markup"><code class="language-markup">icon-{{@key}}: {{this}}</code></pre>
-{{/each}}
+<article>
+	<h2> {{icons.name}} </h2>
+	<p> {{icons.description}} </p>
+	{{#each icons.icon}}
+		<pre class="language-markup"><code class="language-markup">icon-{{@key}}: {{this}}</code></pre>
+	{{/each}}
+</article>
 
-<h2> Typography </h2>
-{{#each typography.base}}
-	<pre class="language-markup"><code class="language-markup">base-{{@key}}: {{this}}</code></pre>
-{{/each}}
+<article>
+	<h2> {{typography.name}} </h2>
+	<p> {{typography.description}} </p>
+	{{#each typography.base}}
+		<pre class="language-markup"><code class="language-markup">base-{{@key}}: {{this}}</code></pre>
+	{{/each}}
+</article>
 
 <br/>
 <br/>
